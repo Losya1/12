@@ -10,8 +10,8 @@ int main() {
     cin >> text;
     cout << "Enter multiplicity" << endl;
     cin >> K;
-    if (K < 1) {
-        cout << "k - error" << endl;
+    if (K < 1 || K > text.size()) {
+        cout << "K - error" << endl;
         return 0;
     }
     for (int i = 0; i < K; ++i) {
