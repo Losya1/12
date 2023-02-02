@@ -18,7 +18,7 @@ int main() {
         x += text[i];
         cout << "000 - " << x << endl;
     }
-    for (int i = 0; i < text.size(); i += K) {
+    for (int i = K; i < text.size(); i += K) {
         cout << "111 - " << i << endl;
         for (int i2 = 0; i2 < K; ++i2) {
             y += text[i2 + i];
