@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     string text, x, y;
     int K;
-    int count = 0;
+    int count = 1;
     cout << "Enter text" << endl;
     cin >> text;
     cout << "Enter multiplicity" << endl;
@@ -21,15 +21,19 @@ int main() {
     for (int i = K; i < text.size(); i += K) {
         cout << "111 - " << i << endl;
         for (int i2 = 0; i2 < K; ++i2) {
+            if (i + i2 > text.size()) {
+                cout << count << ": false" << endl;
+                return 0;
+            }
             y += text[i2 + i];
             cout << "222 - " << y << endl;
         }
         if (x == y) {
-            cout << count + 1 << ": true" << endl;
+            cout << count << ": true" << endl;
             count += 1;
         }
         else {
-            cout << count + 1 << ": false" << endl;
+            cout << count << ": false" << endl;
             count += 1;
         }
         y = "";
