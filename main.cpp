@@ -2,12 +2,11 @@
 #include <string>
 using namespace std;
 
-int main() {
-    string text, x, y;
+int IskPeriod(string text) {
+    string x, y;
+    bool b = false;
     int K;
     int count = 1;
-    cout << "Enter text" << endl;
-    cin >> text;
     cout << "Enter multiplicity" << endl;
     cin >> K;
     if (K < 1 || K > text.size()) {
@@ -22,21 +21,31 @@ int main() {
         cout << "111 - " << i << endl;
         for (int i2 = 0; i2 < K; ++i2) {
             if (i + i2 > text.size()) {
-                cout << count << ": false" << endl;
+                cout << "false" << endl;
                 return 0;
             }
             y += text[i2 + i];
             cout << "222 - " << y << endl;
         }
         if (x == y) {
-            cout << count << ": true" << endl;
-            count += 1;
+            b = true;
         }
         else {
-            cout << count << ": false" << endl;
-            count += 1;
+            cout << "false" << endl;
+            return 0;
         }
         y = "";
     }
+    if (b == true) {
+        cout << "true" << endl;
+        return 0;
+    }
+}
+
+int main() {
+    string text;
+    cout << "Enter text" << endl;
+    cin >> text;
+    IskPeriod(text);
     return 0;
 }
