@@ -6,7 +6,6 @@ int IskPeriod(string text) {
     string x, y;
     bool b = false;
     int K;
-    int count = 1;
     cout << "Enter multiplicity" << endl;
     cin >> K;
     if (K < 1 || K > text.size()) {
